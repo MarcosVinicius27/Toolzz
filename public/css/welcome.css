@@ -1,0 +1,240 @@
+.dark-mode body {
+    background-color: #333;
+}
+
+
+.carousel-item img {
+    width: 100%; 
+}   
+
+.card-body {
+    padding: 10px;
+}
+
+.login-container {
+    display: flex;
+    background: white;
+}
+
+.dark-mode .login-container {
+    background: #1e1e1e;
+    color: white;
+}
+
+.dark-mode .login-form .form-control:hover {
+    border-color: #00acee;
+
+
+}
+
+.login-form .form-control:hover {
+    border-color: #00acee;
+
+}
+
+.dark-mode .login-form .form-control {
+    background-color: #333;
+    /* Cor de fundo escura */
+    color: white;
+    /* Cor do texto branco */
+    border-color: #444;
+    /* Cor da borda escura */
+}
+
+.login-image {
+    display: none;
+}
+
+.login-form {
+    width: 100%;
+    padding: 40px;
+}
+
+.login-form h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.login-form .form-group {
+    margin-bottom: 20px;
+}
+
+.login-form .btn-primary {
+    width: 100%;
+}
+
+.login-form .social-login {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.login-form .social-login button {
+    width: 23%;
+}
+
+.login-form .forgot-password {
+    text-align: center;
+}
+
+.dark-mode .login-form .social-login .btn-outline-dark {
+    /* background: white; */
+    color: black;
+    border-color: white;
+    color: white;
+}
+
+.dark-mode .login-form .social-login .btn-outline-dark:hover {
+    /* background: white; */
+    color: #00acee;
+    border-color: #00acee;
+}
+
+.dark-mode .btn .custom-logo {
+    color: white;
+    border: 2px solid white;
+}
+
+/*          */
+.btn-outline-dark:hover {
+    border-color: inherit;
+    /* Mantém a cor da borda original */
+    background-color: inherit;
+    /* Mantém a cor de fundo original */
+    color: inherit;
+    /* Mantém a cor do texto original */
+}
+
+.btn-outline-dark:hover {
+    border-color: #00acee;
+}
+
+.btn-outline-dark:hover .bi {
+    color: #00acee;
+    border-color: #00acee;
+}
+
+.hr-container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.hr-container hr {
+    flex: 1;
+    border: none;
+    /* Remove a borda padrão do hr */
+    border-top: 1px solid grey;
+    /* Adiciona uma borda superior fina */
+    margin: 0 10px;
+    /* Espaçamento horizontal entre o texto e as linhas */
+}
+
+.hr-container p {
+    margin: 0 10px;
+    /* Espaçamento horizontal entre o texto e as linhas */
+    white-space: nowrap;
+    /* Impede que o texto quebre para uma nova linha */
+}
+
+.tag {
+    background-color: #0d6efd;
+    border-radius: 10px;
+    /* Especifica a unidade como pixels */
+    padding: 5px;
+
+}
+
+
+.dark-mode #toggle-theme {
+    /* background-color: white; */
+    color: #1e1e1e;
+    border: 0;
+    background-color: white;
+}
+
+.seta{
+        bottom: 75rem;;
+        background: none;
+        border: none;
+        position: absolute;
+        left: 73rem;
+        top: 2rem;
+        z-index: 9999999;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 850px;
+        font-size: 100px;
+    
+}
+
+.seta2{
+    background: none;
+    border: none;
+    position: absolute;
+    left: 75rem;
+    top: 2rem;
+    z-index: 9999999;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 850px;
+
+}
+
+.row {
+    position: absolute;
+    left: 75rem;
+    top: 4rem;
+    z-index: 9999999;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.row2 {
+    position: absolute;
+    left: 12rem;
+    top: 2rem;
+    z-index: 9999999;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+#toggle-theme {
+    background: none;
+    border: solid 2px;
+    color: white;
+    padding: 9px;
+    border-radius: 50%;
+    text-align: right;
+}
+
+#toggle-theme2 {
+    background: none;
+    border: none;
+    padding: 10px;
+    color: white;
+    font-size: 40px;
+}
+
+
+
+@media (min-width: 800px) {
+    .login-container {
+        flex-direction: row;
+        
+    }
+
+    .login-image {
+        display: block;
+        width: 100%;
+    }
+
+    .login-form {
+        width: 50%;
+        max-width: none;
+    }
+}

@@ -3,46 +3,46 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Services\UserAuthService;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response as HttpResponse;
 use Illuminate\Support\Facades\Hash;
 
 class UserAuthController extends Controller
 {
-    //
-    public function register(Request $request){
 
-        $registerUserData = $request->validate([
-            'name'=>'required|string',
-            'email'=>'required|string|email|unique:users',
-            'password'=>'required|min:8'
-        ]);
+    protected $UserAuthService;
+
+    public function __construct(UserAuthService $userAuthService)
+    {
+        $this->UserAuthService = $userAuthService;
+    }
+
+
     
-        $user = User::create([
-            'name' => $registerUserData['name'],
-            'email' => $registerUserData['email'],
-            'password' => Hash::make($registerUserData['password']),
-        ]);
+    public function register(Request $request){
+        try {
 
-        return response()->json([
-            'message' => 'User Created',
-        ]);
+            $return = $this->UserAuthService->register($request);
+
+            return response()->json($return['status']);
+
+        } catch (\Exception $e) {
+            throw new Exception($e->getMessage(), HttpResponse::HTTP_INTERNAL_SERVER_ERROR);
+        } 
     }
 
     public function login(Request $request){
-        $loginUserData = $request->validate([
-            'email'=>'required|string|email',
-            'password'=>'required|min:8'
-        ]);
-        $user = User::where('email',$loginUserData['email'])->first();
-        if(!$user || !Hash::check($loginUserData['password'],$user->password)){
-            return response()->json([
-                'message' => 'Invalid Credentials'
-            ],401);
+        try {
+
+            $return = $this->UserAuthService->Login($request);
+
+            return response()->json(['mensage' => $return],$return['status']);
+
+        } catch (\Exception $e) {
+            throw new Exception($e->getMessage(), HttpResponse::HTTP_INTERNAL_SERVER_ERROR);
         }
-        $token = $user->createToken($user->name.'-AuthToken')->plainTextToken;
-        return response()->json([
-            'access_token' => $token,
-        ]);
     }
 
     public function logout(){
@@ -50,7 +50,7 @@ class UserAuthController extends Controller
         auth()->user()->tokens()->delete();
     
         return response()->json([
-          "message"=>"logged out"
+          "message"=>"Deslogado com sucesso!"
         ]);
     }
 }
