@@ -17,15 +17,15 @@ Versão: 8.1 ou > do PHP.
 3. Copie os dados do arquivo .env.example, crie um arquivo na raiz do projeto chamado .env e cole dentro dele os dados presentes em .env.example.
 
 4. Execute o seguinte comando para instalar as dependências do projeto:
-composer install
+`composer install`
 
 5. Execute o seguinte comando para rodar as tabelas do banco de dados:
-php artisan migrate
+`php artisan migrate`
 
 - Importante que haja uma conexão ativa com um banco de dados local e configurada no .env
 
 6. Execute o seguinte comando para iniciar a aplicação Laravel:
-php artisan serve
+`php artisan serve`
 
 ## Tecnologias utilizadas
 <div align="left">
