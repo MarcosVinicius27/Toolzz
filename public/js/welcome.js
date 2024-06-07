@@ -75,24 +75,5 @@ $(document).ready(function () {
         });
     });
 
-
-
-    document.addEventListener('DOMContentLoaded', function() {
-        var logoLight = @json(asset('images/logo.png'));
-        var logoDark = @json(asset('images/logo_darkmode.png'));
-
-        document.getElementById('toggle-theme').addEventListener('click', function () {
-            var logo = document.getElementById('logo');
-            console.log('Button clicked'); // Log para depuração
-            if (document.body.classList.toggle('dark-mode')) {
-                logo.src = logoDark;
-                console.log('Switched to dark mode, logo:', logoDark); // Log para depuração
-            } else {
-                logo.src = logoLight;
-                console.log('Switched to light mode, logo:', logoLight); // Log para depuração
-            }
-        });
-    });
-
 });
 
